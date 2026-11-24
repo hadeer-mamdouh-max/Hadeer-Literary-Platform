@@ -1,0 +1,8 @@
+node_modules
+dist
+.next
+coverage
+package-lock.json
+*.log
+next-env.d.ts
+docs/architecture/PHASE_0_BLUEPRINT.md

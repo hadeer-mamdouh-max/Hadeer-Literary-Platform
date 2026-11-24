@@ -1,0 +1,27 @@
+{
+  "name": "hadeer-literary-platform",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Contemporary Arabic Literary Platform & Atelier for Author Hadeer Mamdouh",
+  "workspaces": [
+    "apps/web",
+    "apps/api",
+    "packages/types"
+  ],
+  "scripts": {
+    "dev": "concurrently -k -n \"api,web\" -c \"cyan,magenta\" \"npm run dev --workspace=@hadeer/api\" \"npm run dev --workspace=@hadeer/web\"",
+    "build": "npm run build --workspace=@hadeer/types && npm run build --workspace=@hadeer/api && npm run build --workspace=@hadeer/web",
+    "typecheck": "npm run typecheck --workspace=@hadeer/types && npm run typecheck --workspace=@hadeer/api && npm run typecheck --workspace=@hadeer/web",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.15.0",
+    "concurrently": "^9.1.0",
+    "eslint": "^9.15.0",
+    "prettier": "^3.4.1",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.16.0"
+  }
+}
